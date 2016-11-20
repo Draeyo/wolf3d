@@ -8,7 +8,8 @@ MLX_PATH = ./minilibx_macos/
 
 LIBFT_PATH = ./libft/
 
-SRCS_NAME = main.c
+SRCS_NAME = main.c expose.c init.c key.c new_image.c ft_exit.c init_map.c ft_calc.c \
+	    put_pixel.c move.c
 
 LIBFT_NAME = -lft
 
@@ -28,14 +29,14 @@ LIB_FLAGS = -L$(MLX) -L $(LIBFT) -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	@(make -C $(LIBFT_PATH))
 	@(make -C $(MLX_PATH))
 	@($(CC) -o $(NAME) $(OBJ) $(LIB_FLAGS))
 	@(echo "\x1b[1;34m$(NAME)\x1b[0m \x1b[32mcreated.\x1b[0m \x1b[1;32m✓\x1b[0m")
 
 %.o: %.c
-	@($(CC) -o $@ -c $< $(CFLAGS) -I $(INC_PATH))
+	@($(CC) -o $@ -c $< $(CFLAGS) -I $(INC_PATH) -I $(MLX_PATH))
 
 clean:
 	@(make -C $(LIBFT_PATH) clean)
