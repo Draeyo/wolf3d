@@ -6,7 +6,7 @@
 #    By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/21 14:06:50 by vlistrat          #+#    #+#              #
-#    Updated: 2016/11/24 17:49:40 by vlistrat         ###   ########.fr        #
+#    Updated: 2016/11/25 07:38:41 by vlistrat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFT_PATH = ./libft/
 
 SRCS_NAME =  main.c wolf3d.c map.c initialisation.c ft_calc.c \
 	echap.c press.c release_key.c put_pixel.c move.c \
-	complete_map.c
+	complete_map.c expose.c
 
 SRCS_PATH = ./srcs/
 

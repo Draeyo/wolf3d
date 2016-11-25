@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:57:01 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/24 14:47:59 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/25 09:32:06 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 static void	set_color(t_wolf *wolf)
 {
-	COLOR = 0xFF00FF;
-	if (SIDE == 1)
-		COLOR /= 4;
+	if (SIDE && STEP_Y > 0)
+		COLOR = 0x0000FF;
+	else if (SIDE && STEP_Y < 0)
+		COLOR = 0x00FF00;
+	else if (!SIDE && STEP_X > 0)
+		COLOR = 0xFF0000;
+	else
+		COLOR = 0x00FFFF;
 }
 
 void		put_pixel(int x, t_wolf *wolf)

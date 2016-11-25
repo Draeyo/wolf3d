@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:57:31 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/24 14:46:50 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/25 07:58:34 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 # define COLOR wolf->color
 
 # define MUSIC wolf->music
+# define CHECK_MUSIC wolf->check_music
+# define MAP_NB wolf->map_nb
 
 # define MAPX wolf->mapx
 # define MAPY wolf->mapy
@@ -127,6 +129,8 @@ typedef struct	s_wolf
 	int			draw_end;
 
 	int			music;
+	int 		check_music;
+	int			map_nb;
 }				t_wolf;
 
 void			wolf3d(t_wolf *wolf);
@@ -135,6 +139,7 @@ void			initialisation(t_wolf *wolf);
 
 void			map(t_wolf *wolf);
 void			complete_map(int map_tmp[20][20], t_wolf *wolf);
+void			select_map(t_wolf *wolf);
 
 void			ft_calc(t_wolf *wolf);
 void			put_pixel(int x, t_wolf *wolf);
@@ -143,5 +148,7 @@ int				echap(t_wolf *wolf);
 int				press(int k, t_wolf *wolf);
 int				release_key(int k, t_wolf *wolf);
 int				move(t_wolf *wolf);
+int				expose(t_wolf *wolf);
 
+void			start_music(t_wolf *wolf);
 #endif

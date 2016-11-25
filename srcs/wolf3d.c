@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 17:29:59 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/24 17:30:09 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/25 08:01:01 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ void	new_image(t_wolf *wolf)
 void	wolf3d(t_wolf *wolf)
 {
 	initialisation(wolf);
-	map(wolf);
+	select_map(wolf);
 	MLX = mlx_init();
 	WIN = mlx_new_window(MLX, WIN_X, WIN_Y, "wolf3d");
 	new_image(wolf);
+	mlx_expose_hook(WIN, expose, wolf);
 	mlx_hook(WIN, 17, (1L << 17), echap, wolf);
 	mlx_hook(WIN, 2, (1L << 0), press, wolf);
 	mlx_hook(WIN, 3, (1L << 1), release_key, wolf);

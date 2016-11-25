@@ -14,7 +14,7 @@
 
 int	echap(t_wolf *wolf)
 {
-	if (MUSIC == 1)
+	if (CHECK_MUSIC)
 		system("killall afplay");
 	exit(0);
 	return (0);
