@@ -12,7 +12,7 @@
 
 #include "wolf3d.h"
 
-void		map(t_wolf *wolf)
+void	map(t_wolf *wolf)
 {
 	static int	map[20][20] =
 	{{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -36,6 +36,7 @@ void		map(t_wolf *wolf)
 	{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 1},
 	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
+	MUSIC = 1;
 	complete_map(map, wolf);
 }
 
@@ -63,6 +64,7 @@ void	map2(t_wolf *wolf)
 	{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1},
 	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
+	MUSIC = 2;
 	complete_map(map2, wolf);
 }
 
@@ -90,6 +92,7 @@ void	map3(t_wolf *wolf)
 	{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
 	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
+	MUSIC = 3;
 	complete_map(map3, wolf);
 }
 
@@ -102,22 +105,17 @@ void	select_map(t_wolf *wolf)
 	if (CHECK_MUSIC)
 		system("killall afplay");
 	if (MAP_NB == 1)
-	{
-		MUSIC = 1;
 		map(wolf);
-	}
 	else if (MAP_NB == 2)
 	{
 		POS_X = 10.5;
 		POS_Y = 10.5;
-		MUSIC = 2;
 		map2(wolf);
 	}
 	else if (MAP_NB == 3)
 	{
 		POS_X = 17.5;
 		POS_Y = 17.5;
-		MUSIC = 3;
 		map3(wolf);
 	}
 	if (CHECK_MUSIC)

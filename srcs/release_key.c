@@ -44,7 +44,7 @@ static void		music_key(t_wolf *wolf)
 	start_music(wolf);
 }
 
-void		start_music(t_wolf *wolf)
+void			start_music(t_wolf *wolf)
 {
 	if (CHECK_MUSIC)
 	{
@@ -63,7 +63,7 @@ int				release_key(int k, t_wolf *wolf)
 		echap(wolf);
 	if (k == 18)
 	{
-		initialisation(wolf);
+		select_map(wolf);
 		new_image(wolf);
 	}
 	if (k >= 19 && k <= 21)

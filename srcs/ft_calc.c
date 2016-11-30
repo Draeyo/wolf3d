@@ -50,7 +50,6 @@ static void	calc_dist(t_wolf *wolf)
 	}
 }
 
-
 static void	find_wall(t_wolf *wolf)
 {
 	while (HIT == 0)

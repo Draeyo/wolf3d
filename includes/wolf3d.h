@@ -21,8 +21,8 @@
 # define WIN_X 1280
 # define WIN_Y 720
 # define FRAME 0.05
-# define ROT_SPD (1.5 * FRAME)
-# define MOVE_SPD_VAL (2.3 * FRAME)
+# define ROT_SPD (1.4 * FRAME)
+# define MOVE_SPD_VAL (1.8 * FRAME)
 
 # define MLX wolf->mlx
 # define WIN wolf->win
@@ -129,7 +129,7 @@ typedef struct	s_wolf
 	int			draw_end;
 
 	int			music;
-	int 		check_music;
+	int			check_music;
 	int			map_nb;
 }				t_wolf;
 

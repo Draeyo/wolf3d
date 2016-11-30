@@ -61,8 +61,11 @@ int			move(t_wolf *wolf)
 	if (MAP_NB == 2 && POS_X >= 17.9 && POS_Y >= 17.9)
 	{
 		MAP_NB = 3;
-		POS_X = 2;
-		POS_Y = 2;
+		select_map(wolf);
+	}
+	if (MAP_NB == 1 && POS_X <= 1.2 && POS_Y <= 2.9)
+	{
+		MAP_NB = 2;
 		select_map(wolf);
 	}
 	new_image(wolf);
